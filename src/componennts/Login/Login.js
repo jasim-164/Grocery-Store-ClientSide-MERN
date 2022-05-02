@@ -1,20 +1,38 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import Loading from '../Loading/Loading';
 
 const Login = () => {
-    const signinWithGoogle=(e)=>{
-        e.preventDefault();
-        console.log('click me');
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth,provider)
-        .then((result)=>{
-            console.log(result);
-        }) 
-        .then((error)=>{
-            console.log(error);
-        })
+    // const signinWithGoogle=(e)=>{
+    //     e.preventDefault();
+    //     console.log('click me');
+    //     const provider = new GoogleAuthProvider();
+    //     signInWithPopup(auth,provider)
+    //     .then((result)=>{
+    //         console.log(result);
+    //     }) 
+    //     .then((error)=>{
+    //         console.log(error);
+    //     })
+    // }
+    //
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    if (error) {
+      return (
+        <div>
+          <p>Error: {error.message}</p>
+        </div>
+      );
+    }
+    if (loading) {
+      return <Loading/>
+    }
+    if(user) {
+      <p>{user.email}</p>
     }
     return (
         <div>
@@ -38,8 +56,9 @@ const Login = () => {
           </Button>
         </Form.Group>
         <div>
+        <div className="text-center"><button className="btn btn-primary m-5" onClick={() => signInWithGoogle()}>Google Signin</button></div>
         
-        <button className="btn btn-primary" onClick={signinWithGoogle}>hhhhh</button>
+        
         </div>
 
       </Form>

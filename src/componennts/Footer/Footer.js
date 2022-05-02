@@ -8,9 +8,9 @@ const Footer = () => {
         
 
         <div>
-            <h1>Footer</h1>
+            
             <div className=" bg-black h-auto text-center">
-            <h1 className=" text-white">All reserved Grocery @{year}</h1>
+            <h1 className=" text-white">All rights reserved in Grocery Store @{year}</h1>
             </div>
         </div>
     );
