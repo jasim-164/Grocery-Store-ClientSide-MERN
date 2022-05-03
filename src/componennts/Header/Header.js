@@ -18,7 +18,7 @@ const Header = () => {
   
     return (
         <div>
-        <div className="d-flex  mr-auto justify-content-around align-items-center">
+        <div className="d-flex  mr-auto justify-content-around align-items-center bg-light">
 
         <div >
         <Link to='/home'><img src={logo} width='200' height='100'alt="logo" ></img></Link>

@@ -1,17 +1,19 @@
 import React,{useState,useEffect} from 'react';
 
 const CustomHook = () => {
-    const [tours,setTours]=useState([]);
-    const [loading,setLoading]=useState(false);
-
-
+    const [datas,setDatas]=useState([]);
+    const [loading,setLoading]=useState(true);
     useEffect(()=>{
-         fetch('data.json')
-        .then(result =>result.json())
-        .then(data => setTours(data));
-        setLoading(true);
+        const fetchJSON=async()=>{
+            const response= await fetch("/products.json")
+            let json=await response.json();
+            setDatas(json);
+        };
+        fetchJSON();
     },[]);
-    return [tours,loading];
+
+    console.log(datas[0]);
+    return [datas,setDatas];
 };
 
 export default CustomHook;
