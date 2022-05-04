@@ -14,10 +14,24 @@ const Inventory = () => {
 
     return (
         <div>
-            <h1>hey why remove</h1>
-            
-            <h1>id:{alldata?._id}</h1>
-            <h1>{alldata?.productName}</h1>
+            <div className="d-flex justify-content-evenly">
+
+          
+            <div className="p-5">
+            <img src={alldata?.picture} alt="product"/>
+            </div>
+            <div className=" bg-light p-5 text-center">
+            <h6>Product-Id: {alldata?._id}</h6>
+            <h1 className="bg-info ">{alldata?.productName}</h1>
+            <h5>Dealer Name: {alldata?.dealerName}</h5>
+            <h5>Quantity: {alldata?.quantity}</h5>
+            <h4>Price: {alldata?.price}</h4>
+            <p>{alldata?.description}</p>
+
+            </div> 
+
+            </div>
+        
 
         </div>
     );
