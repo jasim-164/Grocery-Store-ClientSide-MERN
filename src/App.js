@@ -11,6 +11,7 @@ import Register from './componennts/Login/Register/Register';
 import MyItems from './componennts/UserItem/MyItems/MyItems'
 import ManageItems from './componennts/UserItem/ManageItems/ManageItems'
 import AddItem from './componennts/UserItem/AddItem/AddItem'
+import Blog from './componennts/Blog/Blog'
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
     <Route path="/" element={<Home/>}/>
     <Route path="/home" element={<Home/>}/>
     <Route path="/header" element={<Header/>}/>
+    <Route path="/blog" element={<Blog/>}/>
     <Route path="/register" element= {<Register/>}/> 
     <Route path="/login" element={<Login/>}/>
     <Route path="/inventory/:id" element={<Inventory/>}/>
