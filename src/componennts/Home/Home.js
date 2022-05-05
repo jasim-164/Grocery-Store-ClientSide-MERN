@@ -7,7 +7,7 @@ const Home = () => {
     const [datas,setDatas]=useState([]);
     const [loading,setLoading]=useState(true);
     useEffect(()=>{
-        const url='products.json';
+        const url='http://localhost:4000/products';
         fetch(url)
         .then(result =>result.json())
         .then(x => 
