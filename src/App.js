@@ -12,6 +12,8 @@ import MyItems from './componennts/UserItem/MyItems/MyItems'
 import ManageItems from './componennts/UserItem/ManageItems/ManageItems'
 import AddItem from './componennts/UserItem/AddItem/AddItem'
 import Blog from './componennts/Blog/Blog'
+import RequireAuth from './componennts/RequireAuth/RequireAuth';
+import SignIn from "./componennts/Login/SignIn/SignIn"
 function App() {
 
   return (
@@ -22,9 +24,10 @@ function App() {
     <Route path="/home" element={<Home/>}/>
     <Route path="/header" element={<Header/>}/>
     <Route path="/blog" element={<Blog/>}/>
-    <Route path="/register" element= {<Register/>}/> 
+    <Route path="/register" element= {<Register/>}/>
+    <Route path="/signin" element={<SignIn/>}/> 
     <Route path="/login" element={<Login/>}/>
-    <Route path="/inventory/:id" element={<Inventory/>}/>
+    <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
     <Route path="/manageinventory" element={<ManageInventory/>}/>
     <Route path="/myitems" element={<MyItems/>}/>
     <Route path="/manageitems" element={<ManageItems/>}/>

@@ -24,7 +24,7 @@ const Inventory = () => {
 
           
             <div className="p-5">
-            <img src={alldata?.picture} alt="product"/>
+            <img src={alldata?.picture} height="400" width="500"alt="product"/>
             </div>
             <div className=" bg-light p-5 text-center">
             <h6>Product-Id: {alldata?._id}</h6>
