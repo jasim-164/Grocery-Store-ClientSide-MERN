@@ -19,7 +19,7 @@ const Product = (props) => {
         <div className=" col pt-1 bg-light mb-5 h-95 text-center">
 
         <div  className="text-center ">{productName}</div>
-        <div className="align-content-center pe-5 pt-2"><img src={picture} alt="product" height="300" width="450"/></div>
+        <div className="align-content-center pe-5 pt-2"><img src={picture} alt="product" height="100" width="200" /></div>
         <div>{description.slice(0,100)}</div>
         <div className="text-center pt-2">Dealer:{dealerName}</div>
         <div className="text-center">{price}</div>

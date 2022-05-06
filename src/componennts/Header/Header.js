@@ -9,6 +9,8 @@ import logo from '../../images/Logo 3.png'
 const Header = () => {
     const [user] = useAuthState(auth);
     console.log(user);
+    console.log(user?.displayName);
+    console.log(user?.photoURL);
 
     const handleSignOut = () =>{
         signOut(auth);
@@ -28,7 +30,7 @@ const Header = () => {
         <Link to='/grocery' className="  p-4 text-decoration-none">Grocery-Items</Link>
         <Link to='/blog' className=" p-4 text-decoration-none">Blog</Link>
         {
-            user? <div className="p-2"> <Link to='/myitems' className=' text-decoration-none p-4'>My Items</Link> <Link to='/' className='p-4 mt-2 text-decoration-none'>Manage Items</Link> <Link to='/' className='p-4 mt-2 text-decoration-none'>Add Item</Link> <span className="text-white">{user.displayName}  </span> <span><img src={user.photoURL}style ={{height:"60px", width:"60px", borderRadius:"20px"}}alt="user"></img></span><button className='btn btn-link text-black text-decoration-none ms-5 ' onClick={handleSignOut}>  sign out</button> </div>  :
+            user? <div className="p-2"> <Link to='/myitems' className=' text-decoration-none p-4'>My Items</Link> <Link to='/' className='p-4 mt-2 text-decoration-none'>Manage Items</Link> <Link to='/' className='p-4 mt-2 text-decoration-none'>Add Item</Link> <span className="text-black ms-5">{user?.displayName}  </span> <span><img src={user?.photoURL}style ={{height:"60px", width:"60px", borderRadius:"20px"}}alt="user"></img></span><button className='btn btn-link text-black text-decoration-none ms-5 ' onClick={handleSignOut}>  sign out</button> </div>  :
             <div className='p-4'><Link className="" to='/login'>Login</Link> </div>
             
         }

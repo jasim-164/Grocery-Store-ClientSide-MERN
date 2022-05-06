@@ -83,7 +83,7 @@ const Login = () => {
         </Form.Group>
       </Form>
        <SocialLogin/>
-       <div><h1>Already have an account? </h1><Link to="/register">SignIn</Link></div>
+       <div className="text-center pb-5"><h1>Already have an account? </h1><Link to="/register">SignIn</Link></div>
  
       
     </div>
