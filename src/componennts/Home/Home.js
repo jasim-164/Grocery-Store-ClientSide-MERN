@@ -34,7 +34,7 @@ const Home = () => {
         <h4 className="text-center py-5">Inventory Section</h4>
         <div className=" row row-cols-3 ps-5">
         {
-            datas.map(data => {
+            datas.slice(0,6).map(data => {
                 return(
                     <div>
                     <Product key={data._id} data={data}/>
