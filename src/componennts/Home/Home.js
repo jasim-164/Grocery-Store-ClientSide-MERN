@@ -5,13 +5,14 @@ import Product from '../Product/Product'
 import ExtraSection from './ExtraSection/ExtraSection'
 import DealSection from './DealSection/DealSection'
 import ContactSection from './ContactSection/ContactSection';
+import CarouselProduct from '../CarouselProduct/CarouselProduct';
 
 
 const Home = () => {
     const [datas,setDatas]=useState([]);
     const [loading,setLoading]=useState(true);
     useEffect(()=>{
-        const url='http://localhost:4000/products';
+        const url='https://protected-meadow-32127.herokuapp.com/products';
         fetch(url)
         .then(result =>result.json())
         .then(x => 
@@ -35,6 +36,8 @@ const Home = () => {
     
     return (
         <div className="container">
+        <div className="my-5"><CarouselProduct/></div>
+        
         <h4 className="text-center py-5">Inventory Section</h4>
         <div className=" row ps-5 row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         {

@@ -15,7 +15,7 @@ const MyItems = () => {
     console.log(email)
     const value='YES'
     useEffect(()=>{
-        const  url=`http://localhost:4000/products?email=${email}`
+        const  url=`https://protected-meadow-32127.herokuapp.com/products?email=${email}`
         fetch(url)
         .then(response => response.json())
         .then(data=>{console.log("jasim")

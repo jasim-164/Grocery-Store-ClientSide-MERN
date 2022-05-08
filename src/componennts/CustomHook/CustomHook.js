@@ -5,7 +5,7 @@ const CustomHook = () => {
     const [loading,setLoading]=useState(true);
     useEffect(()=>{
         const fetchJSON=async()=>{
-            const response= await fetch("http://localhost:4000/products")
+            const response= await fetch("https://protected-meadow-32127.herokuapp.com/products")
             let json=await response.json();
             setDatas(json);
         };

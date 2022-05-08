@@ -30,7 +30,7 @@ const Inventory = () => {
       
         console.log(value);
         console.log(id);
-        const url=`http://localhost:4000/product/${id}`
+        const url=`https://protected-meadow-32127.herokuapp.com/product/${id}`
        fetch(url, {
            method: 'PUT',
            headers: {
