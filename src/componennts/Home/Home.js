@@ -2,6 +2,10 @@ import React,{useState,useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Product from '../Product/Product'
+import ExtraSection from './ExtraSection/ExtraSection'
+import DealSection from './DealSection/DealSection'
+import ContactSection from './ContactSection/ContactSection';
+
 
 const Home = () => {
     const [datas,setDatas]=useState([]);
@@ -43,7 +47,11 @@ const Home = () => {
             })
         }
         </div>
+        
         <Link to="/manageinventory"><div className=" text-center pb-5"><Button variant="primary">Manage Inventories</Button></div></Link>
+        <ExtraSection/>
+        <DealSection/>
+        <ContactSection/>
         </div>
     );
 };
