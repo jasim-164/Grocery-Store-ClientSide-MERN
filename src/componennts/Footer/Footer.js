@@ -12,7 +12,6 @@ const Footer = () => {
   <div class="container p-4 pb-0">
     
     <section class="mb-4">
-      
       <a
         class="btn btn-primary btn-floating m-1"
         style={{backgroundColor:"#3b5998"}}

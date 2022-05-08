@@ -7,21 +7,24 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    let errorElement;
     const [
       signInWithEmailAndPassword,
       user,
       loading,
       error,
     ] = useSignInWithEmailAndPassword(auth);
-  
     if (error) {
-      return (
-        <div>
-          <p>Error: {error.message}</p>
-        </div>
-      );
-    }
+      errorElement = <p className='text-danger'>Error: {error?.message}</p>
+  }
+  
+    // if (error) {
+    //   return (
+    //     <div>
+    //       <p>Error: {error.message}</p>
+    //     </div>
+    //   );
+    // }
     if (loading) {
       return <p>Loading...</p>;
     }
@@ -53,6 +56,8 @@ const SignIn = () => {
       <button className="my-5 btn-primary" onClick={() => signInWithEmailAndPassword(email, password)}>
         Sign In
       </button>
+      <h1> {errorElement}</h1>
+     
       <SocialLogin/>
         <div className="text-center pb-5"><h5>Don't have an account? <span><Link to="/login">SignIn</Link></span></h5></div>
       </div>

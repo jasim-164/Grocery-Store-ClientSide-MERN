@@ -8,9 +8,9 @@ import logo from '../../images/Logo 3.png'
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
-    console.log(user?.displayName);
-    console.log(user?.photoURL);
+   // console.log(user);
+    //console.log(user?.displayName);
+    //console.log(user?.photoURL);
 
     const handleSignOut = () =>{
         signOut(auth);

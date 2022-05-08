@@ -19,7 +19,7 @@ const Login = () => {
       user,
       loading,
       error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
     console.log(location); //
     let from = location?.state?.from?.pathname || '/';
     //console.log(from);
