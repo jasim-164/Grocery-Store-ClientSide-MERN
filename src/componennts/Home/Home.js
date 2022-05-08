@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <div className="container">
         <h4 className="text-center py-5">Inventory Section</h4>
-        <div className=" row row-cols-3 ps-5">
+        <div className=" row ps-5 row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         {
             datas.slice(0,6).map(data => {
                 return(

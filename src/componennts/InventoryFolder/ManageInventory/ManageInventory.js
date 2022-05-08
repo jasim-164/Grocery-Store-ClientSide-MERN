@@ -8,9 +8,9 @@ const ManageInventory = () => {
 
     return (
         <div>
-            <h1>hey,manage this page</h1>
+           
             <h4 className="text-center py-5">Inventory Section</h4>
-        <div className=" row row-cols-3 ps-5">
+        <div className=" row  ps-5 row-cols-lg-3 row-cols-sm-1 row-cols-md-2">
         {
             datas.map(data => {
                 return(
