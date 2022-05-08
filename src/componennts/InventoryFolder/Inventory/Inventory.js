@@ -3,20 +3,49 @@ import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 import useHook from "../../CustomHook/CustomHook"
+import MyItems from '../../UserItem/MyItems/MyItems';
 const Inventory = () => {
-  
-    const { id } = useParams();
-    console.log(id);
-    
     const [datas,setDatas]=useHook([]);
-    console.log(datas);
+    const { id } = useParams();
+    //console.log(id);
     const alldata=datas.find(data=>data._id===id)
-    console.log(alldata);
-    let quant= parseInt(alldata?.quantity);
-    console.log(Number.isInteger(quant));
-    console.log(quant)
-    const [quantity,setQuantity]=useState(quant);
-    console.log(quantity);
+
+    const value=Number(alldata?.quantity);
+    
+
+    
+    //console.log(datas);
+ 
+   // console.log(alldata);
+
+    const handleQuantity=(id)=>
+    {
+
+        
+        //const value=Number(alldata?.quantity);
+        let newNumQuantity = value - 1;
+      
+        console.log(value);
+        console.log(id);
+        const url=`http://localhost:4000/product/${id}`
+       fetch(url, {
+           method: 'PUT',
+           headers: {
+               'content-type': 'application/json'
+           },
+           body:  JSON.stringify({
+            "quantity": newNumQuantity
+               } )
+       })
+       .then(res=> res.json())
+       .then(result =>{
+           console.log(result);
+           <MyItems alldata={alldata}/>
+       })
+
+
+    }
+
 
     return (
         <div>
@@ -30,10 +59,10 @@ const Inventory = () => {
             <h6>Product-Id: {alldata?._id}</h6>
             <h1 className="bg-info ">{alldata?.productName}</h1>
             <h5>Dealer Name: {alldata?.dealerName}</h5>
-            <h5>Quantity: {quantity}</h5>
+            <h5>Quantity: {alldata?.quantity}</h5>
             <h4>Price: {alldata?.price}</h4>
             <p>{alldata?.description}</p>
-            <Button variant="primary" onClick={()=>{setQuantity(quantity-1)}}>Delivered</Button>
+            <Button variant="primary" onClick={()=>{handleQuantity(id)}}>Delivered</Button>
 
             </div> 
 

@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className="d-flex mr-auto">    
         <Link to='/' className=" mr-auto p-4 text-decoration-none">Home</Link>
-        <Link to='/grocery' className="  p-4 text-decoration-none">Grocery-Items</Link>
+        <Link to='/manageinventory' className="  p-4 text-decoration-none">Grocery-Items</Link>
         <Link to='/blog' className=" p-4 text-decoration-none">Blog</Link>
         {
             user? <div className="p-2"> <Link to='/myitems' className=' text-decoration-none p-4'>My Items</Link> <Link to='/manageitems' className='p-4 mt-2 text-decoration-none'>Manage Items</Link> <Link to='/additem' className='p-4 mt-2 text-decoration-none'>Add Item</Link> <span className="text-black ms-5">{user?.displayName}  </span> <span><img src={user?.photoURL || url}style ={{height:"60px", width:"60px", borderRadius:"20px"}}alt="user"></img></span><button className='btn btn-link text-black text-decoration-none ms-5 ' onClick={handleSignOut}>  sign out</button> </div>  :

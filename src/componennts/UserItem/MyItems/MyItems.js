@@ -1,6 +1,7 @@
 import React from 'react';
 
-const MyItems = () => {
+const MyItems = ({alldata}) => {
+    console.log(alldata)
     return (
         <div>
             <h1>my items</h1>
