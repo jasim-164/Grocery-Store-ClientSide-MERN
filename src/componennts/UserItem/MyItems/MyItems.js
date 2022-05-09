@@ -28,7 +28,7 @@ const MyItems = () => {
         //console.log('delete')
         const proceed = window.confirm('Are you sure you want to delete')
         if(proceed) {
-            const url= `http://localhost:4000/product/${id}`
+            const url= `https://protected-meadow-32127.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

@@ -63,7 +63,7 @@ const Inventory = () => {
         ProductId:id
     }
   
-    axios.post('http://localhost:8000/order', order)
+    axios.post('https://protected-meadow-32127.herokuapp.com/order', order)
     .then(response =>{
         const {data} = response;
         if(data.insertedId){
