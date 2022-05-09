@@ -7,13 +7,12 @@ import Login from './componennts/Login/Login';
 import Inventory from './componennts/InventoryFolder/Inventory/Inventory'
 import ManageInventory from'./componennts/InventoryFolder/ManageInventory/ManageInventory'
 import NotFound from './componennts/NotFound/NotFound'
-import Register from './componennts/Login/Register/Register';
 import MyItems from './componennts/UserItem/MyItems/MyItems'
 import ManageItems from './componennts/UserItem/ManageItems/ManageItems'
 import AddItem from './componennts/UserItem/AddItem/AddItem'
 import Blog from './componennts/Blog/Blog'
 import RequireAuth from './componennts/RequireAuth/RequireAuth';
-import SignIn from "./componennts/Login/SignIn/SignIn"
+import SignUp from "./componennts/Login/SignUp/SignUp"
 function App() {
 
   return (
@@ -24,8 +23,7 @@ function App() {
     <Route path="/home" element={<Home/>}/>
     <Route path="/header" element={<Header/>}/>
     <Route path="/blog" element={<Blog/>}/>
-    <Route path="/register" element= {<Register/>}/>
-    <Route path="/signin" element={<SignIn/>}/> 
+    <Route path="/signup" element={<SignUp/>}/> 
     <Route path="/login" element={<Login/>}/>
     <Route path="/inventory/:id" element={<RequireAuth><Inventory/></RequireAuth>}/>
     <Route path="/manageinventory" element={<ManageInventory/>}/>

@@ -58,7 +58,7 @@ const Footer = () => {
 
   
   <div class="text-center p-3 bg-info text-black" > All reserved to Grocery Store
-    Copyright @{year}  <a className='text-black' href="https://mdbootstrap.com/">Made By Jasim</a>
+    Copyright @{year}  <a className='text-black' href="https://github.com/jasim-164">Made By Jasim Uddin</a>
   </div>
 
 </footer>
